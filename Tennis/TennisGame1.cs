@@ -16,10 +16,10 @@ namespace Tennis
         {
             Name = name;
         }
-     
+
         public string Name { get; }
 
-        private int _points;     
+        private int _points;
         public int Points
         {
             get { return _points; }
@@ -37,26 +37,23 @@ namespace Tennis
 
         public string GetComparativeScore(Player opponent)
         {
-            var score="";
+            var score = "";
             if (Points == opponent.Points)
             {
-                return Points > 2 ? 
-                    score = "Deuce"
-                :
-                    score = GetScore() + "-All";
+                return Points > 2 ? score = "Deuce" : score = GetScore() + "-All";
             }
-            
+
             if (Points >= 4 || opponent.Points >= 4)
             {
                 var pointDifference = Points - opponent.Points;
-                if (pointDifference == 1) score = "Advantage player1";
-                else if (pointDifference == -1) score = "Advantage player2";
-                else if (pointDifference >= 2) score = "Win for player1";
-                else score = "Win for player2";
+                if (pointDifference == 1) score = "Advantage "+Name;
+                else if (pointDifference == -1) score = "Advantage "+opponent.Name;
+                else if (pointDifference >= 2) score = "Win for "+Name;
+                else score = "Win for "+opponent.Name;
 
                 return score;
             }
-            
+
             return GetScore() + "-" + opponent.GetScore();
         }
     }
@@ -74,14 +71,14 @@ namespace Tennis
 
         public void WonPoint(string playerName)
         {
-            if(_player1.Name==playerName)
-                {
-                    _player1.WonPoint();
-                }
-                else
-                {
-                    _player2.WonPoint();
-                }
+            if (_player1.Name == playerName)
+            {
+                _player1.WonPoint();
+            }
+            else
+            {
+                _player2.WonPoint();
+            }
         }
 
         public string GetScore()
