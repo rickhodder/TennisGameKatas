@@ -118,7 +118,7 @@ namespace Tennis
         private void RealisticTennisGame(ITennisGame game)
         {
             string[] points = { Constants.Player1Name, Constants.Player1Name, Constants.Player2Name, Constants.Player2Name, Constants.Player1Name, Constants.Player1Name};
-            string[] expectedScores = { "Fifteen-Love", "Thirty-Love", "Thirty-Fifteen", "Thirty-All", "Forty-Thirty", "Win for player1" };
+            string[] expectedScores = { "Fifteen-Love", "Thirty-Love", "Thirty-Fifteen", "Thirty-All", "Forty-Thirty", "Win for "+Constants.Player1Name };
             for (var i = 0; i < 6; i++)
             {
                 game.WonPoint(points[i]);
