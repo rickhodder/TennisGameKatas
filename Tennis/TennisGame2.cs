@@ -36,6 +36,16 @@ namespace Tennis
                         "Deuce";
             }
 
+            if (player1Points > player2Points && player2Points >= 3)
+            {
+                gameScore = "Advantage player1";
+            }
+
+            if (player2Points > player1Points && player1Points >= 3)
+            {
+                gameScore = "Advantage player2";
+            }
+
             if (player1Points > 0 && player2Points == 0)
             {
                 gameScore = ConvertPointsToScore(player1Points) + "-Love";
@@ -51,30 +61,23 @@ namespace Tennis
                 gameScore = ConvertPointsToScore(player1Points) + "-"+
                             ConvertPointsToScore(player2Points);
             }
+
             if (player2Points > player1Points && player2Points < 4)
             {
                 gameScore = ConvertPointsToScore(player1Points) + "-"+
                             ConvertPointsToScore(player2Points);
             }
 
-            if (player1Points > player2Points && player2Points >= 3)
-            {
-                gameScore = "Advantage player1";
-            }
-
-            if (player2Points > player1Points && player1Points >= 3)
-            {
-                gameScore = "Advantage player2";
-            }
-
             if (player1Points >= 4 && player2Points >= 0 && (player1Points - player2Points) >= 2)
             {
                 gameScore = "Win for player1";
             }
+
             if (player2Points >= 4 && player1Points >= 0 && (player2Points - player1Points) >= 2)
             {
                 gameScore = "Win for player2";
             }
+
             return gameScore;
         }
 
