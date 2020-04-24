@@ -46,10 +46,10 @@ namespace Tennis
             if (Points >= 4 || opponent.Points >= 4)
             {
                 var pointDifference = Points - opponent.Points;
-                if (pointDifference == 1) score = "Advantage "+Name;
-                else if (pointDifference == -1) score = "Advantage "+opponent.Name;
-                else if (pointDifference >= 2) score = "Win for "+Name;
-                else score = "Win for "+opponent.Name;
+                if (pointDifference == 1) score = "Advantage " + Name;
+                else if (pointDifference == -1) score = "Advantage " + opponent.Name;
+                else if (pointDifference >= 2) score = "Win for " + Name;
+                else score = "Win for " + opponent.Name;
 
                 return score;
             }
