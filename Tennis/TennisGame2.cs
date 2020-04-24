@@ -31,7 +31,7 @@ namespace Tennis
 
             if (player1Points == player2Points)
             {
-                gameScore = player1Points < 3 ?
+                return  player1Points < 3 ?
                         ConvertPointsToScore(player1Points) + "-All" :
                         "Deuce";
             }
@@ -58,24 +58,24 @@ namespace Tennis
 
             if (player1Points > player2Points && player1Points < 4)
             {
-                gameScore = ConvertPointsToScore(player1Points) + "-"+
-                            ConvertPointsToScore(player2Points);
+                return  ConvertPointsToScore(player1Points) + "-"+
+                        ConvertPointsToScore(player2Points);
             }
 
             if (player2Points > player1Points && player2Points < 4)
             {
-                gameScore = ConvertPointsToScore(player1Points) + "-"+
-                            ConvertPointsToScore(player2Points);
+                return  ConvertPointsToScore(player1Points) + "-"+
+                        ConvertPointsToScore(player2Points);
             }
 
             if (player1Points >= 4 && player2Points >= 0 && (player1Points - player2Points) >= 2)
             {
-                gameScore = "Win for player1";
+                return "Win for player1";
             }
 
             if (player2Points >= 4 && player1Points >= 0 && (player2Points - player1Points) >= 2)
             {
-                gameScore = "Win for player2";
+                return "Win for player2";
             }
 
             return gameScore;
