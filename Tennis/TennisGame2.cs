@@ -87,28 +87,28 @@ namespace Tennis
             return gameScore;
         }
 
-        public void SetP1Score(int number)
+        public void SetPlayer1Score(int number)
         {
             for (int i = 0; i < number; i++)
             {
-                P1Score();
+                IncrementPlayer1Points();
             }
         }
 
-        public void SetP2Score(int number)
+        public void SetPlayer2Score(int number)
         {
             for (var i = 0; i < number; i++)
             {
-                P2Score();
+                IncrementPlayer2Points();
             }
         }
 
-        private void P1Score()
+        private void IncrementPlayer1Points()
         {
             player1Points++;
         }
 
-        private void P2Score()
+        private void IncrementPlayer2Points()
         {
             player2Points++;
         }
@@ -116,9 +116,9 @@ namespace Tennis
         public void WonPoint(string player)
         {
             if (player == "player1")
-                P1Score();
+                IncrementPlayer1Points();
             else
-                P2Score();
+                IncrementPlayer2Points();
         }
 
     }
